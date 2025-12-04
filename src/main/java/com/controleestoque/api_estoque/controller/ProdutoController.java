@@ -23,4 +23,9 @@ public class ProdutoController {
     public List<Produto> list() {
         return repository.findAll();
     }
+
+    @GetMapping("/{id}")
+    public Produto getById(@PathVariable Long id) {
+        return repository.findById(id).orElseThrow(() -> new IllegalArgumentException("Produto não encontrado"));
+    }
 }

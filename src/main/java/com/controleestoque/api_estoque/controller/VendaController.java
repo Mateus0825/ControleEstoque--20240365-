@@ -25,4 +25,9 @@ public class VendaController {
             return ResponseEntity.internalServerError().body(e.getMessage());
         }
     }
+
+    @GetMapping
+    public ResponseEntity<?> listarVendas() {
+        return ResponseEntity.ok(vendaService.listarVendas());
+    }
 }
